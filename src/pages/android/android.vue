@@ -1,6 +1,5 @@
 <template>
-	<div class="android">
-        <p>aaaaa</p>
-	</div>
+  <div class="anroid">
+    android
+  </div>
 </template>
-

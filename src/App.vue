@@ -1,58 +1,24 @@
 <template>
-  <div id="app">
-    <div class="nav">
-      <ul>
-        <li>
-          <router-link to=/Home>Home</router-link>
-        </li>
-        <li>
-          <router-link to=/Spider>Spider</router-link>
-        </li>
-        <li>
-          <router-link to=/Android>Android</router-link>
-        </li>
-      </ul>
-    </div>
-    <router-view></router-view>
+  <div class="app">
+    <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" router @select="handleSelect">
+      <el-menu-item index="Home">首页</el-menu-item>
+      <el-menu-item index="Spider" >爬虫</el-menu-item>
+    </el-menu>
+    <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
-  data () {
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      activeIndex: 'Home'
+    }
+  },
+  methods: {
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath)
     }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-</style>

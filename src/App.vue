@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="apps">
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" router @select="handleSelect">
       <el-menu-item index="Home">首页</el-menu-item>
       <el-menu-item index="Spider" >爬虫</el-menu-item>
@@ -22,3 +22,4 @@ export default {
   }
 }
 </script>
+

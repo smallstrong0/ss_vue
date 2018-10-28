@@ -14,6 +14,7 @@ axios.interceptors.response.use(response => {
   return Promise.resolve(error.response)
 })
 
+<<<<<<< HEAD
 function checkStatus(response) {
   // loading
   // 如果http状态码正常，则直接返回数据
@@ -35,6 +36,11 @@ function checkCode(res) {
   }
   if (res.data && (!res.data.success)) {
     alert(res.data.error_msg)
+=======
+function checkCode(res) {
+  if (res.code !== 200) {
+    alert(res.message)
+>>>>>>> 【v0.0.1】add axios
   }
   return res
 }
@@ -50,10 +56,13 @@ export default {
       headers: {
       }
     }).then(
+<<<<<<< HEAD
       (response) => {
         return checkStatus(response)
       }
     ).then(
+=======
+>>>>>>> 【v0.0.1】add axios
       (res) => {
         return checkCode(res)
       }

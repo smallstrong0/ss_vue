@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    home
+    <ul id="example-1">
+      <li v-for="item in items" :key="item.author">
+        {{ item.author }}
+      </li>
+    </ul>
   </div>
 </template>
 <script>
@@ -9,7 +13,7 @@ export default {
   name: 'Hello',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      items: []
     }
   },
   mounted: function() {
@@ -20,9 +24,7 @@ export default {
       const params = {
       }
       const res = await http.post('search/list', params)
-      if (res.data.success) {
-        alert('请求成功')
-      }
+      this.items = res.data.data.result_list
     }
   }
 }

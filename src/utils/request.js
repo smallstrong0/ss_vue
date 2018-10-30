@@ -3,8 +3,11 @@ import { Message } from 'element-ui'
 
 // create an axios instance
 const service = axios.create({
-  baseURL: 'http://wanandroid.com', // api 的 base_url
-  timeout: 5000 // request timeout
+  baseURL: 'http://wanandroid.com',
+  timeout: 5000,
+  headers: {
+    'Content-Type': 'application/json'
+  }
 })
 
 // request interceptor

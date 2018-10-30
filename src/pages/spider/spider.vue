@@ -32,7 +32,7 @@ export default {
     getData() {
       listProject().then(response => {
         console.log(response)
-        // this.items = response.data.data.datas
+        this.items = response.data.data.datas
       })
     }
   }

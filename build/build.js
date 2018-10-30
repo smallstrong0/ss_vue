@@ -44,24 +44,24 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
       )
     )
 
-    if (process.env.npm_config_preview) {
-      const port = 9500
-      const host = 'http://localhost:' + port
-      const basePath = config.build.assetsPublicPath
-      const app = connect()
+    // if (process.env.npm_config_preview) {
+    //   const port = 9500
+    //   const host = 'http://localhost:' + port
+    //   const basePath = config.build.assetsPublicPath
+    //   const app = connect()
 
-      app.use(
-        basePath,
-        serveStatic('./dist', {
-          index: ['index.html', '/']
-        })
-      )
+    //   app.use(
+    //     basePath,
+    //     serveStatic('./dist', {
+    //       index: ['index.html', '/']
+    //     })
+    //   )
 
-      app.listen(port, function() {
-        console.log(
-          chalk.green(`> Listening at  http://localhost:${port}${basePath}`)
-        )
-      })
-    }
+    //   app.listen(port, function() {
+    //     console.log(
+    //       chalk.green(`> Listening at  http://localhost:${port}${basePath}`)
+    //     )
+    //   })
+    // }
   })
 })

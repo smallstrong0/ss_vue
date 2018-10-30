@@ -14,13 +14,6 @@ axios.interceptors.response.use(response => {
   return Promise.resolve(error.response)
 })
 
-function checkCode(res) {
-  if (res.code !== 200) {
-    alert(res.message)
-  }
-  return res
-}
-
 export default {
   post(url, data) {
     return axios({
@@ -33,7 +26,7 @@ export default {
       }
     }).then(
       (res) => {
-        return checkCode(res)
+        return res
       }
     )
   }

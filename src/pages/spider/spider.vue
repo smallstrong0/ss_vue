@@ -7,6 +7,7 @@
         <div>
           <p> {{ item.niceDate }} </p>
           <p> {{ item.author }} </p>
+          <p> {{ item.author }} </p>
         </div>
       </li>
     </ul>
